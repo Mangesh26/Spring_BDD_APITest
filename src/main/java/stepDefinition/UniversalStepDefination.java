@@ -1,6 +1,9 @@
 package stepDefinition;
 
 
+import java.io.FileReader;
+import java.util.Properties;
+
 import org.apache.log4j.Logger;
 
 import cucumber.api.java.en.Given;
@@ -15,8 +18,15 @@ public class UniversalStepDefination{
 	
 	 @Given("^Get the list of users$")
 	 public void get_the_list_of_users() throws Throwable {
-	     // Write code here that turns the phrase above into concrete actions
-	     System.out.println("Calling Given...");
+		 String path = System.getProperty("user.dir");
+		 path = path+"\\src\\main\\resources\\application.properties";
+		 FileReader reader=new FileReader(path);  
+	      
+		    Properties p=new Properties();  
+		    p.load(reader);  
+		      
+		    System.out.println(p.getProperty("GET_URL"));  
+		    System.out.println(p.getProperty("USER_AGENT"));
 	 }
 	
 	 @When("^access the api$")
