@@ -11,7 +11,7 @@ public class Action {
 //		return inilization;
 //	}
 	
-	public String format() {
-        return "foo";
+	public void format() {
+        System.out.println("dfsd");
     }
 }

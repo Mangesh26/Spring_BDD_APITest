@@ -15,13 +15,13 @@ public class UniversalStepDefination{
 	 
 	 
 	@Autowired
-	public Action action;
+	private Action action;
 	 
 	 @Given("^Get the list of users$")
 	 public void get_the_list_of_users() throws Throwable {
 		 //action.inilization().inilizeFile();
-		   action.format(); 
-		    
+		   System.out.println("hello"); 
+		 //  action.format();
 	 }
 	
 	 @When("^access the api$")
